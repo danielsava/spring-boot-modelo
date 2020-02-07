@@ -1,5 +1,6 @@
 package bpe.repository;
 
+import bpe.base.SpringJpaRepository;
 import bpe.entity.Funcionalidade;
 import org.springframework.stereotype.Repository;
 

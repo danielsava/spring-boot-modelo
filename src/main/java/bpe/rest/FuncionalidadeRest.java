@@ -22,7 +22,7 @@ public class FuncionalidadeRest {
 
 
     @GetMapping // @GetMapping("tasks") ou  @GetMapping(value = "/stream/tasks/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public List<Funcionalidade> find() {
+    public List<Funcionalidade> findAll() {
         return dao.findAll();
     }
 
@@ -33,8 +33,8 @@ public class FuncionalidadeRest {
     }
 
     @PostMapping
-    public Funcionalidade create(@Valid @RequestBody Funcionalidade e) {
-        return dao.save(e);
+    public ResponseEntity<Funcionalidade> create(@Valid @RequestBody Funcionalidade e) {
+        return ResponseEntity.ok(dao.save(e));
     }
 
     @PutMapping

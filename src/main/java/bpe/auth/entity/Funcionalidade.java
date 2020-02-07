@@ -1,4 +1,4 @@
-package bpe.entity;
+package bpe.auth.entity;
 
 import bpe.base.BaseEntity;
 
