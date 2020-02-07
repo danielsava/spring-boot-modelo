@@ -1,4 +1,4 @@
-package entity;
+package bpe.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
