@@ -22,13 +22,13 @@ public class FuncionalidadeRest {
 
 
     @GetMapping // @GetMapping("tasks") ou  @GetMapping(value = "/stream/tasks/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public List<Funcionalidade> getAll() {
+    public List<Funcionalidade> find() {
         return dao.findAll();
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Funcionalidade> getById(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
-        Funcionalidade e = dao.findById(id).orElseThrow(() -> new ResourceNotFoundException("Entity not found for this id :: " + id));
+    public ResponseEntity<Funcionalidade> findById(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
+        Funcionalidade e = dao.findById(id).orElseThrow(() -> new ResourceNotFoundException("findById : entidade não encontrada para o 'id' " + id));
         return ResponseEntity.ok().body(e);
     }
 
@@ -49,7 +49,7 @@ public class FuncionalidadeRest {
     @DeleteMapping("{id}")
     public void delete(@PathVariable(value = "id") Long id) throws ResourceNotFoundException {
         if(!dao.existsById(id))
-            throw new ResourceNotFoundException("Delete: Entidade 'id' " + id + " informado(" + id + ")");
+            throw new ResourceNotFoundException("Delete: Entidade 'id' " + id + " não existe");
         dao.deleteById(id);
     }
 
