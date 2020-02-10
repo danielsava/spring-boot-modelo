@@ -11,7 +11,26 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
+
+
+/**
+ *
+ *  Exemplos de anotações segurança para utilizar nos métodos
+ *   - @PreAuthorize("hasRole('USER_READ_PRIVILEGE')")
+ *   - @PreAuthorize("isAuthenticated()")
+ *
+ *
+ * Exemplos de Anotações Rest
+ *  - @GetMapping("tasks")
+ *  - @GetMapping(value = "/stream/tasks/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+ *  - @RequestMapping(value = "/password", method = RequestMethod.PUT)
+ *
+ *
+ */
+
+
+
 @RestController
 @RequestMapping("/funcionalidades")
 public class FuncionalidadeRest {
@@ -20,8 +39,7 @@ public class FuncionalidadeRest {
     @Autowired
     private FuncionalidadeDao dao;
 
-
-    @GetMapping // @GetMapping("tasks") ou  @GetMapping(value = "/stream/tasks/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping
     public List<Funcionalidade> findAll() {
         return dao.findAll();
     }

@@ -7,7 +7,7 @@ public class Credencial implements Serializable {
 
     public String login;
 
-    public Token token;
+    public String token;
 
     public String pagInicial;
 
@@ -17,7 +17,7 @@ public class Credencial implements Serializable {
         return new Credencial();
     }
 
-    public Credencial token(Token token) {
+    public Credencial token(String token) {
         this.token = token;
         return this;
     }

@@ -4,6 +4,8 @@ import bpe.base.SpringJpaRepository;
 import bpe.entity.Funcionalidade;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 public interface FuncionalidadeDao extends SpringJpaRepository<Funcionalidade> { // CrudRepository<Funcionalidade, Long> {
 
